@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web-Based Terminal</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: white;
+            margin: 0;
+        }
+        #terminal {
+            padding: 10px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        #input-line {
+            display: flex;
+        }
+        #current-path {
+            margin-right: 5px;
+        }
+        input {
+            background-color: black;
+            color: white;
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div id="output"></div>
+        <div id="input-line">
+            <span id="current-path">C:\></span>
+            <input id="command-input" type="text" onkeypress="handleCommand(event)" />
+        </div>
+    </div>
+
+    <script>
+        const fileSystem = {
+            "C:": { folders: { folder1: {}, folder2: {} }, files: ["file1.txt", "file2.txt"] },
+            "D:": { folders: { folder3: {}, folder4: {} }, files: ["file3.txt", "file4.txt"] }
+        };
+
+        let currentPath = "C:\\";
+
+        function handleCommand(event) {
+            if (event.key === "Enter") {
+                const commandInput = document.getElementById("command-input");
+                const output = document.getElementById("output");
+                const command = commandInput.value.trim();
+                commandInput.value = "";
+
+                // Process command
+                output.innerHTML += `<div>${currentPath}> ${command}</div>`;
+                processCommand(command);
+            }
+        }
+
+ function processCommand(command) {
+    const output = document.getElementById("output");
+    const parts = command.split(" ");
+    const cmd = parts[0].toLowerCase();
+
+    if (cmd.endsWith(":")) {
+        // Change drive
+        const drive = cmd.toUpperCase();
+        if (fileSystem[drive]) {
+            currentPath = `${drive}\\`;
+        } else {
+            output.innerHTML += `<div>The system cannot find the drive specified.</div>`;
+        }
+    } else {
+        const param = parts[1];
+        switch (cmd) {
+            case "cls":
+                output.innerHTML = "";
+                break;
+            case "dir":
+                output.innerHTML += `<div>${listContents()}</div>`;
+                break;
+            case "cd":
+                changeDirectory(param);
+                break;
+            case "md":
+                createDirectory(param);
+                break;
+            case "rd":
+                removeDirectory(param);
+                break;
+            case "del":
+                deleteFile(param);
+                break;
+            case "echo":
+               createFile(param);
+               break;
+
+            default:
+                output.innerHTML += `<div>'${cmd}' is not recognized as an internal or external command.</div>`;
+        }
+    }
+}
+
+        function listContents() {
+            const pathParts = currentPath.split("\\");
+            const drive = pathParts[0];
+            let folder = fileSystem[drive];
+            for (let i = 1; i < pathParts.length - 1; i++) {
+                folder = folder.folders[pathParts[i]];
+            }
+            const folderContents = folder ? Object.keys(folder.folders).join("  ") + "  " + folder.files.join("  ") : "";
+            return folderContents || "No items found.";
+        }
+
+        function changeDirectory(path) {
+            if (path === "..") {
+                const pathParts = currentPath.split("\\");
+                pathParts.pop();
+                currentPath = pathParts.join("\\") || "C:\\";
+            } else if (fileSystem[currentPath.split("\\")[0]].folders[path]) {
+                currentPath += `\\${path}`;
+            }
+        }
+
+        function createDirectory(name) {
+            const pathParts = currentPath.split("\\");
+            let folder = fileSystem[pathParts[0]];
+            for (let i = 1; i < pathParts.length - 1; i++) {
+                folder = folder.folders[pathParts[i]];
+            }
+            if (!folder.folders[name]) folder.folders[name] = {};
+        }
+
+        function removeDirectory(name) {
+            const pathParts = currentPath.split("\\");
+            let folder = fileSystem[pathParts[0]];
+            for (let i = 1; i < pathParts.length - 1; i++) {
+                folder = folder.folders[pathParts[i]];
+            }
+            delete folder.folders[name];
+        }
+
+        function deleteFile(name) {
+            const pathParts = currentPath.split("\\");
+            let folder = fileSystem[pathParts[0]];
+            for (let i = 1; i < pathParts.length - 1; i++) {
+                folder = folder.folders[pathParts[i]];
+            }
+            const index = folder.files.indexOf(name);
+            if (index > -1) folder.files.splice(index, 1);
+        }
+function createFile(name) {
+    const pathParts = currentPath.split("\\");
+    let folder = fileSystem[pathParts[0]];
+    for (let i = 1; i < pathParts.length - 1; i++) {
+        folder = folder.folders[pathParts[i]];
+    }
+    if (!folder.files.includes(name)) {
+        folder.files.push(name);
+        const output = document.getElementById("output");
+        output.innerHTML += `<div>File '${name}' created successfully.</div>`;
+    } else {
+        const output = document.getElementById("output");
+        output.innerHTML += `<div>File '${name}' already exists.</div>`;
+    }
+}
+
+    </script>
+</body>
+</html>
