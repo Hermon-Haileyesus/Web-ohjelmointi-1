@@ -26,6 +26,8 @@
         <h1>Keskustelusivu</h1>
     </header>
     <main>
+        <button id="avaaDialog">Kommentoi</button>
+        <dialog id="kommentoiDialog">
         <form>
             <label for="birthdate">Syntymäpäivä</label>
             <input type="date" id="birthdate" name="birthdate"><br><br>
@@ -40,9 +42,12 @@
             <input type="checkbox" id="markkinointi" name="markkinointi">
             <label for="markkinointi"> Hyväksyn, että tietojani käytetään markkinoinnissa</label><br><br>
             <button type="submit">Lähetä</button>
-        </form><br>
+            <button type="button" id="suljeDialog">Sulje</button>
+        </form>
+        </dialog>
+
         <section>
-            <article class="comment" style="border-top: 2px solid black;">
+            <article class="comment" style="border-top: 2px solid black; margin-top: 20px;">
                 <h3>erkki@joku.fi - 1.2.2025 klo 10:20</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -74,5 +79,18 @@
             </article>
         </section>
     </main>
+    <script>
+        const dialogi = document.getElementById('kommentoiDialog');
+        const avaaPainike = document.getElementById('avaaDialog');
+        const suljePainike = document.getElementById('suljeDialog');
+    
+        avaaPainike.addEventListener('click', () => {
+          dialogi.showModal();
+        });
+    
+        suljePainike.addEventListener('click', () => {
+          dialogi.close();
+        });
+      </script>
 </body>
 </html>
