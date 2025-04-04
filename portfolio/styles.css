@@ -1,0 +1,82 @@
+body {
+    margin-left: 64px;
+    margin-right: 64px;
+    background-color: #e0e0e0eb;
+    font-family: Arial, sans-serif;
+}
+
+
+h1 {
+    color: rgb(96, 16, 171); 
+    font-size: 60px;
+}
+
+h2 {
+    color: rgb(96, 16, 171);
+    font-size: 48px;
+}
+
+h3 {
+    color: rgb(96, 16, 171);
+    font-size: 32px;
+}
+
+h4 {
+    color: rgb(96, 16, 171);
+    font-size: 18px;
+}
+
+h5, h6 {
+    color: rgb(96, 16, 171);
+    font-size: 16px; 
+}
+header, main, footer, div
+{
+    background-color:#ffffff ;
+}
+
+.profile
+{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding-bottom: 20px;
+    border-bottom: 6px solid black;
+}
+
+a {
+    color: #008000; 
+    text-decoration: none;
+  }
+  
+  
+a.visited {
+    color: gray; 
+  }
+  
+  
+a:hover 
+{
+    color: #00ff00;
+    font-size: 22px; 
+}
+a:active
+{
+    color: blue;
+}
+  
+  
+button 
+{
+    background-color: #008000; 
+    color: #ffffff; 
+    border: none; 
+    padding: 10px 20px;
+    cursor: pointer;
+}
+  
+
+button:hover
+{
+    background-color: #00ff00; 
+    color: #000000; 
+}
