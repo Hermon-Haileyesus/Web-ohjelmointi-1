@@ -1,0 +1,39 @@
+
+.horizontal-flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+
+.vertical-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    border: 5px solid black;
+    width: 30%;
+    margin-top: 20px;
+   
+}
+
+
+.flex-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-start;
+    padding: 10px;
+    border: 3px solid black;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    
+    
+}
+
+.flex-item img {
+    width: 50px; 
+    margin-right: 20px;
+}
