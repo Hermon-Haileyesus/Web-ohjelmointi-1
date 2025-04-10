@@ -32,7 +32,13 @@ h5, h6 {
     color: rgb(96, 16, 171);
     font-size: 16px; 
 }
-header, main, footer, div
+header
+{
+    background-color: azure;
+    padding: 10px;
+}
+
+main, footer, div
 {
     background-color:#ffffff ;
     padding: 10px;
