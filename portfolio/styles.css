@@ -1,15 +1,14 @@
 body {
     margin-left: 64px;
     margin-right: 64px;
-    margin-top: 20px;
-    background-color: #e0e0e0eb;
+    background-color: #bcccf1;
     font-family: Arial, sans-serif;
     
 }
 
 
 h1 {
-    color: rgb(96, 16, 171); 
+    color: rgb(255, 255, 255); 
     font-size: 60px;
 }
 
@@ -32,34 +31,88 @@ h5, h6 {
     color: rgb(96, 16, 171);
     font-size: 16px; 
 }
-header
+.container1
 {
-    background-color: azure;
-    padding: 10px;
+    display: grid;
+    grid-template-rows: 200px 50px auto 50px;
+    gap: 10px;
 }
+.container1 > div {
+  background-color:white;
+  padding: 10px;
+}
+.container1 > div.header1 {
+  text-align: center;
+  background-color: rgb(92, 92, 128);
+  background-image: linear-gradient(to right, rgb(62, 61, 61) , rgb(107 143 232));
 
-main, footer, div
-{
-    background-color:#ffffff ;
-    padding: 10px;
 }
 
 .profile
-{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    padding-bottom: 20px;
-    border-bottom: 6px solid black;
-}
+    {
+       display: grid;
+       grid-template-columns: 4fr 1fr;
+       padding-bottom: 20px;
+       border-bottom: 6px solid black;
+    }
+.container {
+          display: grid;
+          grid-template-areas:
+            "header header"
+            "MainNav MainNav"
+            "menu content"
+            "footer footer";
+          grid-template-columns: 1fr 3fr;
+          gap: 5px;
+          padding: 10px;
+        }
+        .container > div {
+          background-color:white;
+          
+        }
+        .container > div.header {
+          grid-area: header;
+          text-align: center;
+          background-color: rgb(92, 92, 128);
+          background-image: linear-gradient(to right, rgb(62, 61, 61) , rgb(107 143 232) );
+    
+        }
+        .container > div.MainNav {
+          grid-area: MainNav;
+          padding: 10px;
+        }
+        .container > div.menu {
+          grid-area: menu;
+          background-color: rgb(251, 255, 255);
+          height: 400px;
+          overflow: auto;
+          
+        }
+        .menu nav div
+        {
+            padding: 10px;
+        }
+
+        .container > div.content {
+          grid-area: content;
+          height: 400px;
+          overflow: auto;
+          
+        }
+        .container > div.footer {
+          grid-area: footer;
+          padding: 10px;
+        }
 
 a {
     color: #008000; 
     text-decoration: none;
+    font-size: 16px;
   }
   
   
 a.visited {
-    color: gray; 
+    color: rgb(38, 38, 38); 
   }
   
   

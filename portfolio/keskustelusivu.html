@@ -12,18 +12,29 @@
    
 </head>
 <body>
-    <header>
-        <h1>Hermonin Sivu</h1>
-        <nav>
-             <a href="../Cv-sivu.html">Etusivu</a>|
-             <a href="../työkokemus.html">Työkokemus</a>|
-             <a href="index.html">Portfoliosivu</a>
-             
-        </nav>
-        <h2>Keskustelusivu</h2>
-    </header>
-    <main>
-        <button id="avaaDialog">Kommentoi</button>
+    <div class="container">
+        <div class="header">
+            <h1>Hermon Tiev24N</h1>
+        </div>
+        <div class="MainNav">
+            <nav>
+                <a href="../Cv-sivu.html">Etusivu</a>&gt;
+                <a href="../työkokemus.html">Työkokemus</a> &gt;
+                <a href="index.html" class="visited">Portfoliosivu</a>
+            </nav>
+        </div>
+        <div class="menu">
+            <nav>
+                <div><a href="keskustelusivu.html" class="visited">Keskustelusivu</a></div>
+                <div><a href="mediasivu.html">Mediasivu</a></div>
+                <div><a href="flex.html">Flex-harjoitussivu</a></div>
+                <div><a href="pohjapiiros.html">Pohjapiirossivu</a></div>
+            </nav>
+        </div>
+        
+        <div class="content">
+            <h2>Keskustelusivu</h2>
+            <button id="avaaDialog">Kommentoi</button>
         <dialog id="kommentoiDialog">
          <form>
             <label for="birthdate">Syntymäpäivä</label>
@@ -75,19 +86,27 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </article>
         </section>
-    </main>
-    <script>
-        const dialogi = document.getElementById('kommentoiDialog');
-        const avaaPainike = document.getElementById('avaaDialog');
-        const suljePainike = document.getElementById('suljeDialog');
-    
-        avaaPainike.addEventListener('click', () => {
-          dialogi.showModal();
-        });
-    
-        suljePainike.addEventListener('click', () => {
-          dialogi.close();
-        });
-      </script>
+        </div>
+        <div class="footer">
+            <nav>
+                <a href="https://taito.edu.turku.fi/my/">Moodleen</a> &gt; 
+                <a href="https://turku.inschool.fi/">Wilmaan</a> &gt;
+                <a href="https://tai.fi/">TAI:n sivustolle</a>
+            </nav>
+        </div>
+        <script>
+            const dialogi = document.getElementById('kommentoiDialog');
+            const avaaPainike = document.getElementById('avaaDialog');
+            const suljePainike = document.getElementById('suljeDialog');
+        
+            avaaPainike.addEventListener('click', () => {
+              dialogi.showModal();
+            });
+        
+            suljePainike.addEventListener('click', () => {
+              dialogi.close();
+            });
+          </script>
+    </div>
 </body>
 </html>
