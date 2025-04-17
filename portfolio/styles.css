@@ -1,8 +1,11 @@
 body {
-    margin-left: 64px;
+    margin-left:64px;
     margin-right: 64px;
-    background-color: #bcccf1;
+    max-width: 1000px;
+    background-color: #c0d4ff;
     font-family: Arial, sans-serif;
+    height: 100vh;
+  
     
 }
 
@@ -72,42 +75,44 @@ h5, h6 {
         }
         .container > div.header {
           grid-area: header;
-          text-align: center;
+          padding: 1em 3em 1em 3em;
           background-color: rgb(92, 92, 128);
           background-image: linear-gradient(to right, rgb(62, 61, 61) , rgb(107 143 232) );
     
         }
         .container > div.MainNav {
           grid-area: MainNav;
-          padding: 10px;
+          padding: 1em 3em 1em 3em;
         }
         .container > div.menu {
           grid-area: menu;
           background-color: rgb(251, 255, 255);
-          height: 400px;
-          overflow: auto;
+          padding-left: 3em;
+      
           
         }
         .menu nav div
         {
-            padding: 10px;
+            margin-top: 2em;
         }
 
         .container > div.content {
           grid-area: content;
-          height: 400px;
-          overflow: auto;
-          
+          padding: 5em 3em;
         }
         .container > div.footer {
           grid-area: footer;
-          padding: 10px;
+          display: flex;
+          padding: 3em 3em;
+          justify-content: center;
+          align-items: center;
         }
 
 a {
     color: #008000; 
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
+    margin-right: 3em;
   }
   
   
@@ -119,7 +124,7 @@ a.visited {
 a:hover 
 {
     color: #00ff00;
-    font-size: 18px; 
+    font-size: 21px; 
 }
 a:active
 {
