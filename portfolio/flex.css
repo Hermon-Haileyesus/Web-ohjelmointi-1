@@ -37,3 +37,16 @@
     width: 50px; 
     margin-right: 20px;
 }
+@media (max-width:639px) {
+
+   .horizontal-flex-container{
+    display: flex;
+    flex-direction: column;
+   } 
+   .vertical-flex-container{
+    width: auto;
+   }
+   .flex-item{
+    flex-direction: column;
+   }
+}

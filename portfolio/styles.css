@@ -56,7 +56,7 @@ h5, h6 {
 .container1
 {
     display: grid;
-    grid-template-rows: 200px 50px auto 50px;
+    grid-template-rows: auto;
     gap: 10px;
 }
 .container1 > div {
@@ -72,11 +72,17 @@ h5, h6 {
 
 .profile
     {
-       display: grid;
-       grid-template-columns: 4fr 1fr;
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: space-between;
        padding-bottom: 20px;
        border-bottom: 6px solid black;
     }
+  .harrastukset ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
 .container {
           display: grid;
           grid-template-areas:
@@ -165,4 +171,131 @@ button:hover
 {
     background-color: #00ff00; 
     color: #000000; 
+}
+
+      
+.main-con{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+div.gallery {
+margin: 5px;
+border: 1px solid #ccc;
+width: 100px;
+flex: 20%;
+
+}
+
+div.gallery:hover {
+border: 1px solid #777;
+}
+
+div.gallery img {
+width: 100%;
+height: auto;
+}
+.main-pic
+{
+ display: grid;
+ grid-template-columns: 1fr 3fr 1fr;
+}
+.icon
+{
+ display: grid;
+ place-content: center;
+ background-color: white;
+ font-size: 65px;
+}
+.main-pic img{
+  max-width: 100%;
+  height: auto;
+
+}
+.icon{
+  display: grid;
+  align-items: center;
+}
+.iconi{
+font-size: 70px;
+}
+
+.table-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.table-container table{
+  width: 100%; 
+  height: 500px; 
+  border-collapse: collapse; 
+  margin: 20px auto;
+}
+
+
+
+
+
+@media (max-width: 639px) {
+  .MainNav nav, .footer nav{
+      display: flex;
+      flex-direction: column; 
+  }
+  .profile .texti{
+    order: 2;
+  }
+  .profile figure{
+    order: 1;
+  }
+  .harrastukset ul{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  body {
+      margin-left: 16px;
+      margin-right: 16px;
+  }
+
+  h1 { font-size: 32px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 22px; }
+  h4 { font-size: 18px; }
+
+.container > div.header {
+  grid-area: 1 / span 2;
+
+}
+.container > div.MainNav {
+  grid-area: 2 / span 2;
+}
+.container > div.menu {
+  grid-area: 3 / span 2; 
+}
+
+
+.container > div.content {
+  grid-area: 4 / span 2;
+ 
+}
+.container > div.footer {
+  grid-area: 5 / span 2;
+ 
+}
+.main-con{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+div.gallery{
+  width: auto;
+}
+.main-pic
+{
+ display: grid;
+
+}
+.iconi{
+  font-size: 20px;
+  }
+
 }
