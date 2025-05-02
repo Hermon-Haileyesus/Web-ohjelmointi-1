@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Aänitiedostot,Kuunteleminen verkossa, Äänisisältö ">
-    <meta name="description" content="Kuuntele helposti ääniä ja äänitiedostoja verkkosivullamme.">
-    <meta name="author" content="Hermon Haileyesus">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="../FavIcon.png">
-    <script src="mediasivu.js" defer></script>
-    <title>Mediasivu</title>
-
+    <script src="muuttuja.js" defer></script>
+    <title>Muuttujia ja tietotyyppejä</title>
 </head>
 <body>
     <div class="container">
@@ -27,7 +23,7 @@
         <div class="menu">
             <nav>
                 <div><a href="keskustelusivu.html">Keskustelusivu</a></div>
-                <div><a href="mediasivu.html" class="visited">Mediasivu</a></div>
+                <div><a href="mediasivu.html">Mediasivu</a></div>
                 <div><a href="flex.html">Flex-harjoitussivu</a></div>
                 <div><a href="pohjapiiros.html">Pohjapiirossivu</a></div>
                 <div><a href="gallariasivu.html">Gallariasivu</a></div>
@@ -36,11 +32,14 @@
         </div>
         
         <div class="content">
-          <h2>Mediasivu</h2>
-          <p>Tällä sivulla voit kuunnella esittelynauhoituksen:</p>
-          <audio src="audio.m4a" controls>
-            Selaimesi ei tue audioelementtiä.
-          </audio>
+          <h3>Muuttujia ja tietotyyppejä</h3>
+          <section>
+            <h4>Muuttujat</h4>
+            <button onclick="summa()">Summa</button>
+            <button onclick="vahennys()">Vähennys</button>
+            <button onclick="kerto()">Kerto</button>
+            <button onclick="jako()">Jako</button>
+           </section>
         </div>
         <div class="footer">
             <nav>
@@ -49,6 +48,7 @@
                 <a href="https://tai.fi/">TAI</a>
             </nav>
         </div>
+        
     </div>
 </body>
 </html>
