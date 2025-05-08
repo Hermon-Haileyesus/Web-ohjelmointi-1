@@ -8,8 +8,9 @@
     <meta name="author" content="Hermon Haileyesus">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="../FavIcon.png">
+    <script src="keskustelusivu.js" defer ></script>
     <title>keskustelusivu</title>
-    <scrip src="keskustelusivu.js" defer ></scrip>
+    
    
 </head>
 <body>
@@ -37,26 +38,27 @@
         
         <div class="content">
             <h2>Keskustelusivu</h2>
-            <button id="avaaDialog">Kommentoi</button>
-        <dialog id="kommentoiDialog">
-         <form>
-            <label for="birthdate">Syntymäpäivä</label>
-            <input type="date" id="birthdate" name="birthdate"><br><br>
-            <label for="email">Email</label>
-            <input type="email" id="email" class="email"><br><br>
-            <label for="type">Valitse viestin tyyppi:</label>
-            <select id="type" name="type">
-              <option value="comment">Kommentti</option>
-              <option value="question">Kysymys</option>
-            </select><br><br>
-            <textarea name="message" rows="8" cols="50"></textarea><br>
-            <input type="checkbox" id="markkinointi" name="markkinointi">
-            <label for="markkinointi"> Hyväksyn, että tietojani käytetään markkinoinnissa</label><br><br>
-            <button type="submit">Lähetä</button>
-            <button type="button" id="suljeDialog">Sulje</button>
-         </form>
-        </dialog>
-
+            <dialog id="kommentoiDialog">
+                <form>
+                    <label for="birthdate">Syntymäpäivä</label>
+                    <input type="date" id="birthdate" name="birthdate"><br><br>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="email"><br><br>
+                    <label for="type">Valitse viestin tyyppi:</label>
+                    <select id="type" name="type" style="width: 200px; height: 40px; font-size: 16px;">
+                      <option value="comment">Kommentti</option>
+                      <option value="question">Kysymys</option>
+                    </select><br><br>
+                    <textarea name="message", id="message" rows="8" cols="50"></textarea><br>
+                    <input type="checkbox" id="markkinointi" name="markkinointi">
+                    <label for="markkinointi"> Hyväksyn, että tietojani käytetään markkinoinnissa</label><br><br>
+                    <button type="submit" onclick="send(event)">Lähetä</button>
+                    <button type="button" id="suljeDialog" onclick="document.getElementById('kommentoiDialog').close()">Sulje</button>
+                </form>
+            </dialog>
+            <button id="avaaDialog" onclick="openDialog()">Kommentoi</button>
+            
+       
         <section>
             <article class="comment" style="border-top: 2px solid black; margin-top: 20px;">
                 <h4>erkki@joku.fi - 1.2.2025 klo 10:20</h4>
@@ -97,19 +99,6 @@
                 <a href="https://tai.fi/">TAI</a>
             </nav>
         </div>
-        <script>
-            const dialogi = document.getElementById('kommentoiDialog');
-            const avaaPainike = document.getElementById('avaaDialog');
-            const suljePainike = document.getElementById('suljeDialog');
-        
-            avaaPainike.addEventListener('click', () => {
-              dialogi.showModal();
-            });
-        
-            suljePainike.addEventListener('click', () => {
-              dialogi.close();
-            });
-          </script>
     </div>
 </body>
 </html>
