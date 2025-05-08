@@ -23,11 +23,11 @@ function send(event) {
     console.log("Viestin tyyppi:", type);
     console.log("Viesti:", message);
     console.log("Hyväksyn, että tietojani käytetään markkinoinnissa:", markkinointi );
-   // Get the current timestamp
+  
    const currentDate = new Date();
    const formattedDate = `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()} klo ${currentDate.getHours()}:${currentDate.getMinutes()}`;
 
-   // Create a new article element
+ 
    const newComment = document.createElement("article");
    newComment.classList.add("comment");
 
@@ -36,7 +36,7 @@ function send(event) {
        <p>${message}</p>
    `;
 
-   // Append the new comment to the comment section
+   
    document.querySelector("section").appendChild(newComment);
     document.getElementById("kommentoiDialog").close();
 }

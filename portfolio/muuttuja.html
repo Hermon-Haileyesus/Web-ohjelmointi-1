@@ -28,6 +28,7 @@
                 <div><a href="pohjapiiros.html">Pohjapiirossivu</a></div>
                 <div><a href="gallariasivu.html">Gallariasivu</a></div>
                 <div><a href="muuttuja.html">Muuttujia ja tietotyyppejä</a></div>
+                <div><a href="Tehtävälista.html">Teehtävälistasivu</a></div>
             </nav>
         </div>
         
@@ -35,11 +36,27 @@
           <h3>Muuttujia ja tietotyyppejä</h3>
           <section>
             <h4>Muuttujat</h4>
-            <button onclick="summa()">Summa</button>
-            <button onclick="vahennys()">Vähennys</button>
-            <button onclick="kerto()">Kerto</button>
-            <button onclick="jako()">Jako</button>
-           </section>
+            <button onclick="summa(a, b)">Summa</button>
+            <button onclick="vahennys(b,c)">Vähennys</button>
+            <button onclick="kerto(c,d)">Kerto</button>
+            <button onclick="jako(d, a)">Jako</button>
+          </section>
+          <section>
+            <h4>Laskin</h4>
+            <div class="box">
+                <div class="fildes">
+                    <input type="number" id="numero1" placeholder="Syötä ensimmäinen luku">
+                    <input type="number" id="numero2" placeholder="Syötä toinen luku">
+                </div>
+                <div class="signs">
+                    <button onclick="laskin_summa()">&#43;</button>
+                    <button onclick="laskin_vahennys()">&minus;</button>
+                    <button onclick="laskin_kerto()">&times;</button>
+                    <button onclick="laskin_jako()">&divide;</button>
+                </div>
+            </div>
+          </section>
+
         </div>
         <div class="footer">
             <nav>
