@@ -38,8 +38,12 @@
         
         <div class="content">
             <ul id="taskList"></ul>
-            <input type="text" id="taskInput" placeholder="Kirjoita tehtävä">
-            <button onclick="lisaa()">Lisää</button>
+            <form>
+                <input type="text" id="taskInput" placeholder="Kirjoita tehtävä">
+                <input type="number" id="taskCount" placeholder="Montako kertaa?" min="1">
+                <button onclick="lisaa(event)">Lisää</button>
+            </form>
+            
         </div>
         <div class="footer">
             <nav>
