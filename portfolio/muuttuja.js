@@ -47,3 +47,27 @@ function laskin_jako() {
     let toka = parseFloat(document.getElementById("numero2").value);
     jako(eka, toka);
 }
+
+function naytaAika() {
+    let nyt = new Date();
+
+    
+    let paivamaara = `${nyt.getDate()}.${nyt.getMonth() + 1}.${nyt.getFullYear()}`;
+    let aika = `${nyt.getHours()}.${nyt.getMinutes()}.${nyt.getSeconds()}`;
+    let paivaJaAika = `${paivamaara} klo ${aika}`;
+
+    let viikonpaivat = ["Sunnuntai", "Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai"];
+    let kuukaudet = ["Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kesäkuu", "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"];
+
+    let viikonpaiva = viikonpaivat[nyt.getDay()];
+    let kuukausi = kuukaudet[nyt.getMonth()];
+
+
+    document.getElementById("paivamaara").innerText = `Päivämäärä: ${paivamaara}`;
+    document.getElementById("aika").innerText = `Aika: ${aika}`;
+    document.getElementById("paivaJaAika").innerText = `Päivämäärä ja aika: ${paivaJaAika}`;
+    document.getElementById("viikonpaiva").innerText = `Viikonpäivä: ${viikonpaiva}`;
+    document.getElementById("kuukausi").innerText = `Kuukausi: ${kuukausi}`;
+}
+
+
