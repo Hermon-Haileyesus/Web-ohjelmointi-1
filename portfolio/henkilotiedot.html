@@ -15,6 +15,8 @@
                     border-collapse: collapse;
                     padding: 5px;
                       }
+        td, th {
+                   word-wrap: break-word;}
         thead{
             color: blue;
             font-size: 20px;
@@ -24,9 +26,8 @@
             font-size: 18px;
         }
         #henkiloForm div{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
+            display: grid;
+            
         }
       
     </style>
@@ -58,7 +59,7 @@
         
         <div class="content">
           <h2>Henkilötiedot</h2>
-          <table style="width: 100%;">
+          <table style="width: 100%;  border-collapse: collapse;" id="table">
             <thead>
                 <tr>
                     <th>Nimi</th>
@@ -71,10 +72,10 @@
           </table>
           <h2>Lisää henkilö</h2>
           <form id="henkiloForm">
-              <div><label>Nimi: </label> <input type="text" id="nimi"></div>
-              <div><label>Ikä: </label><input type="number" id="ika"></div>
-              <div><label>Työ: </label><input type="text" id="tyo"></div>
-              <div><label>Ajokortti: </label><input type="checkbox" id="ajokortti" style="width: 25px; height: 25px;"></div>
+              <div><label for="nimi">Nimi: </label> <input type="text" id="nimi"></div>
+              <div><label for="ika">Ikä: </label><input type="number" id="ika"></div>
+              <div><label for="tyo">Työ: </label><input type="text" id="tyo"></div>
+              <div><label for="ajokortti">Ajokortti: </label><input type="checkbox" id="ajokortti" style="width: 25px; height: 25px;"></div>
               <div> <button type="button" onclick="lisaaHenkilo(event)">Lähetä</button></div>
           </form>
       

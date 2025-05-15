@@ -327,5 +327,11 @@ input::placeholder {
  display: grid;
  grid-template-columns: auto;
 }
+#table {
+  display: block;
+  overflow-x: auto;
+}
+
+
 
 }
