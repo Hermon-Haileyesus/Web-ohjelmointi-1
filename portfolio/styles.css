@@ -181,7 +181,7 @@ input{
   font-size: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
-.box {
+.boxi {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   padding: 10px; 
 
@@ -189,6 +189,20 @@ input{
 .fildes{
   margin-bottom: 10px;
 }
+.signs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.signs button {
+  flex: 1 1 18%;
+  min-width: 60px;
+}
+
+
 
 
       
@@ -254,6 +268,57 @@ font-size: 70px;
   font-size: 18px;
   color: blue;
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  transition: all 1s ease-in-out;
+}
+
+.red {
+  background-color: red;
+}
+.red:hover {
+  background-color: purple;
+  transform: rotate(180deg);
+}
+
+.green {
+  background-color: green;
+}
+.green:hover {
+  background-color: orange;
+  transform: scale(1.2);
+}
+
+.blue {
+  background-color: blue;
+}
+.blue:hover {
+  background-color: cyan;
+  transform: rotateY(180deg);
+}
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  color: white;
+  font-weight: bold;
+}
+
+.blue:hover .text-box {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+
+
+
+
 
 
 

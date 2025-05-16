@@ -37,14 +37,17 @@
           <h3>Muuttujia ja tietotyyppejä</h3>
           <section>
             <h4>Muuttujat</h4>
-            <button onclick="summa(a, b)">Summa</button>
-            <button onclick="vahennys(b,c)">Vähennys</button>
-            <button onclick="kerto(c,d)">Kerto</button>
-            <button onclick="jako(d, a)">Jako</button>
+            <div class="signs">
+                <button onclick="summa(a, b)">Summa</button>
+                <button onclick="vahennys(b,c)">Vähennys</button>
+                <button onclick="kerto(c,d)">Kerto</button>
+                <button onclick="jako(d, a)">Jako</button>
+            </div>
+
           </section>
           <section>
             <h4>Laskin</h4>
-            <div class="box">
+            <div class="boxi">
                 <div class="fildes">
                     <input type="number" id="numero1" placeholder="Syötä ensimmäinen luku">
                     <input type="number" id="numero2" placeholder="Syötä toinen luku">
@@ -54,26 +57,51 @@
                     <button onclick="laskin_vahennys()">&minus;</button>
                     <button onclick="laskin_kerto()">&times;</button>
                     <button onclick="laskin_jako()">&divide;</button>
+                    <button onclick="laskin_abs()">Abs</button>
+                    <button onclick="laskin_sqrt()">Sqrt</button>
+                    <button onclick="laskin_pow()">Pow</button>
+                    <button onclick="laskin_round()">Round</button>
+                    <button onclick="laskin_max()">Max</button>
+                    <button onclick="laskin_min()">Min</button>
+                    
+            
+            
                 </div>
             </div>
-          </section>
-          <section class="paivamaara">
-            <h4>Näytä hetken päivämäärä ja aika</h4>
-            <button onclick="naytaAika()">Klikkaa minua</button>
-            <div id="paivamaara"></div>
-            <div id="aika"></div>
-            <div id="paivaJaAika"></div>
-            <div id="viikonpaiva"></div>
-            <div id="kuukausi"></div>
-          </section>
-          
-
-
-
-
-
-
-        </div>
+            </section>
+            <section class="paivamaara">
+                <h4>Näytä hetken päivämäärä ja aika</h4>
+                <button onclick="naytaAika()">Klikkaa minua</button>
+                <div id="paivamaara"></div>
+                <div id="aika"></div>
+                <div id="paivaJaAika"></div>
+                <div id="viikonpaiva"></div>
+                <div id="kuukausi"></div>
+            </section>
+            <section id="Veijo">
+                <h2>Veijo</h2>
+                <ul></ul>
+              </section>
+              <section id="Elvira">
+                <h2>Elvira</h2>
+                <ul></ul>
+                </section>
+            
+            <section id="Mehdi">
+                <h2>Mehdi</h2>
+                <ul></ul>
+            </section>
+            <section id="Tuuli">
+                <h2>Tuuli</h2>
+                <ul></ul>
+            </section>
+            <h4>Veijon ja Tuulin kaikki oikeudet yhteensä</h4>
+            <ul id="veijotuuli"></ul>
+            <h4>Oikeudet, jotka ovat yhteisiä Mehdille ja Elviralle</h4>
+            <ul id="mehdielvira"></ul>
+            <h4>Elviralla ja Tuulilla olevat ne oikeudet, jotka eivät ole heille yhteisiä</h4>
+            <ul id="elviratuuli"></ul>
+         </div>
         <div class="footer">
             <nav>
                 <a href="https://taito.edu.turku.fi/my/">Moodleen</a> &gt;
