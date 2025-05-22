@@ -18,8 +18,11 @@ body {
     background-color: #c0d4ff;
     font-family: Roboto, sans-serif;
     height: 100vh;
-  
-    
+    font-size: 20px;
+  }
+p{
+  font-size: 1.2em;
+
 }
 
 
@@ -314,7 +317,22 @@ font-size: 70px;
   opacity: 1;
   transform: translate(-50%, -50%) rotateY(180deg);
 }
-
+.tulos{
+  margin: 20px;
+  border-bottom: 3px solid #000000 ;
+}
+#userNumbers input{
+  width:50px;
+ 
+}
+.syote{
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(154, 220, 247);
+}
 
 
 
@@ -343,6 +361,7 @@ font-size: 70px;
   body {
       margin-left: 16px;
       margin-right: 16px;
+      font-size: 16px;
   }
 
   h1 { font-size: 32px; }
@@ -390,9 +409,7 @@ input{
    
     width: 90%;
 }
-input::placeholder {
-  color: transparent;
-}
+
 .main-pic
 {
  display: grid;
