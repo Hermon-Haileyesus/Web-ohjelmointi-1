@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Pääsivu, Alasivut, Navigointi ">
+    <meta name="author" content="Hermon Haileyesus">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="../FavIcon.png">
+    <script src="merkijonot.js" defer></script>
+    <title>Merkkijonot</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hermon Tiev24N</h1>
+        </div>
+        <div class="MainNav">
+            <nav>
+                <a href="../Cv-sivu.html">Etusivu</a> &gt;
+                <a href="../työkokemus.html">Työkokemus</a> &gt;
+                <a href="index.html" class="visited">Portfoliosivu</a>
+            </nav>
+        </div>
+        <div class="menu">
+            <nav>
+                <div><a href="keskustelusivu.html">Keskustelusivu</a></div>
+                <div><a href="mediasivu.html">Mediasivu</a></div>
+                <div><a href="flex.html">Flex-harjoitussivu</a></div>
+                <div><a href="pohjapiiros.html">Pohjapiirossivu</a></div>
+                <div><a href="gallariasivu.html">Gallariasivu</a></div>
+                <div><a href="muuttuja.html">Muuttujia ja tietotyyppejä</a></div>
+                <div><a href="Tehtavalista.html">Tehtävälistasivu</a></div>
+                <div><a href="henkilotiedot.html">Henkilötiedotsivu</a></div>
+                <div><a href="kasino.html">Kasinosivu</a></div>
+                <div><a href="merkijonot.html">Merkkijonotsivu</a></div>
+            </nav>
+        </div>
+        
+        <div class="content">
+            <h3>Poimi kirjain</h3>
+            <div class="syote">
+                <input type="text" id="textInput" placeholder="Syötä teksti">
+                <input type="number" id="indexInput" placeholder="Syötä numero">
+            </div>
+
+            <button onclick="showCharacter()">Näytä</button>
+            <div id="result" class="tulos"></div>
+            <h3>Löydä indeksi</h3>
+            <div class="syote">
+                <input type="text" id="mainText" placeholder="Syötä teksti">
+                <input type="text" id="searchText" placeholder="Etsi merkki">
+            </div>
+
+            <button onclick="findIndex()">Näytä</button>
+            <div id="indexResult" class="tulos"></div>
+            <h2>Leikkaa merkkijono</h2>
+            <div class="syote">
+                <input type="text" id="cutText" placeholder="Syötä teksti">
+                <input type="number" id="startIndex" placeholder="Alkuindeksi">
+                <input type="number" id="endIndex" placeholder="Loppuindeksi">
+            </div>
+
+            <button onclick="sliceString()">Näytä</button>
+            <div id="sliceResult" class="tulos"></div>
+            <h3>Etsi ja korvaa</h3>
+            <div class="syote">
+                <input type="text" id="replaceText" placeholder="Syötä teksti">
+                <input type="text" id="searchReplace" placeholder="Etsi teksti">
+                <input type="text" id="newReplace" placeholder="Korvaa tekstillä">
+            </div>
+
+            <button onclick="replaceText()">Näytä</button>
+            <div id="replaceResult" class="tulos"></div>
+            <h3>Poikki ja pinoon</h3>
+            <div class="syote">
+                <input type="text" id="splitText" placeholder="Syötä teksti">
+                <input type="text" id="delimiter" placeholder="Erota teksti">
+            </div>
+
+            <button onclick="splitString()">Näytä</button>
+            <ul id="splitResult" class="tulos"></ul></div>
+        <div class="footer">
+            <nav>
+                <a href="https://taito.edu.turku.fi/my/">Moodleen</a> &gt;
+                <a href="https://turku.inschool.fi/">Wilmaan</a> &gt;
+                <a href="https://tai.fi/">TAI</a>
+            </nav>
+        </div>
+        
+    </div>
+</body>
+</html>
